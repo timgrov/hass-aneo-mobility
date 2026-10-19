@@ -262,6 +262,8 @@ class AneoMobilityClient:
                         "subscription": subscription,
                         "state": state,
                     }
+                except InvalidAuth:
+                    raise
                 except Exception as err:
                     _LOGGER.warning(
                         "Failed to get state for charger %s: %s",
